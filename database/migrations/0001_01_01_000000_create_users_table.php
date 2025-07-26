@@ -20,9 +20,21 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
 
+            // sa library system (OLD)
             // changes# 1-> new Additional fields        
-            $table->string('avatar')->nullable();
-            $table->string('role')->default('user');
+            // $table->string('avatar')->nullable();
+            // $table->string('role')->default('user');
+            // Then run: php artisan migrate:refresh
+
+
+            // #1 changes:     ✅ Step 2: Update User Migration 
+            $table->string('avatar')->nullable(); // optional profile avatar
+            $table->string('role')->default('user'); // optional: role-based access
+            
+            /* Then run:
+                php artisan migrate:refresh
+                #1 changes:     ✅ Step 2: Update User Migration 
+            */
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

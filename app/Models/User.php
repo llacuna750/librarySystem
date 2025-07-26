@@ -21,7 +21,22 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+
+        // changes# 2 -> Step 3: Update User Model (old)
+        // 'avatar', // new field
+        // 'role', // new field
+
+        // #2 changes: ✅ Step 3: Update User Model
+        'avatar',
+        'role',
+
+        // #3 Changes: ✅ Step 4: Create ProfileController and Form
+        /*
+            php artisan make:controller ProfileController
+        */
     ];
+
+    
 
     /**
      * The attributes that should be hidden for serialization.
