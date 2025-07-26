@@ -28,9 +28,11 @@ return new class extends Migration
 
 
             // #1 changes:     ✅ Step 2: Update User Migration 
-            $table->string('avatar')->nullable(); // optional profile avatar
+
+            #5 chages: gi comment ang avatar kay nag add ug add_avatar migration file
+            // $table->string('avatar')->nullable(); // optional profile avatar   // new gi-comment kay nag add ug add_avatar migration file 
             $table->string('role')->default('user'); // optional: role-based access
-            
+
             /* Then run:
                 php artisan migrate:refresh
                 #1 changes:     ✅ Step 2: Update User Migration 
