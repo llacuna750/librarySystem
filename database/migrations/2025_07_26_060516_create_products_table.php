@@ -20,6 +20,11 @@ return new class extends Migration
             $table->string('name');
             $table->unsignedBigInteger('supplier_id');
             $table->foreign('supplier_id')->references('id')->on('suppliers')->onDelete('cascade');
+
+            // $table->decimal('price', 8, 2);
+            $table->decimal('price', 8, 2)->nullable(); // not ideal if price should always exist
+            // $table->decimal('price', 8, 2)->default(0);
+            // $table->foreignId('supplier_id')->constrained()->onDelete('cascade');
         });
     }
 

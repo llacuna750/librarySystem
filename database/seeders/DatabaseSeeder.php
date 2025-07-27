@@ -15,18 +15,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        \App\Models\User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+        ]);
+
         $this->call([
             SupplierSeeder::class,
             ProductSeeder::class,
             OrderSeeder::class,
         ]);
-
-        if (!User::where('email', 'test@example.com')->exists()) {
-            User::create([
-                'name' => 'Test User',
-                'email' => 'test@example.com',
-                'password' => Hash::make('password'), // use a real password
-            ]);
-        }
     }
 }
